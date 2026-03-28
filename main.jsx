@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // Main JS - Interactions and Animations
 import React from 'react';
 import { createRoot } from 'react-dom/client';
@@ -265,7 +265,7 @@ function initTestimonialModal() {
         }
     });
 }
-=======
+
 // Main JS - Interactions and Animations
 import React from 'react';
 import { createRoot } from 'react-dom/client';
@@ -532,4 +532,4 @@ function initTestimonialModal() {
         }
     });
 }
->>>>>>> aca854ef880eb96c33be2d8b360adfaac5b8c9eb
+
