@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Dinesh Wadhwani</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">DW</a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#my-edge">My Edge</a></li>
+                <li><a href="index.html#coaching">Coaching Studio</a></li>
+                <li><a href="index.html#offerings">Offerings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="contact-split-layout">
+            <!-- Left Side: Info -->
+            <div class="contact-info-panel">
+                <div class="info-content fade-in-up">
+                    <h1>Let's Start the <br> <span class="accent-text">Conversation</span></h1>
+                    <p class="contact-lead">Ready to take the next step? Schedule a complimentary consultation with our
+                        team and discover how we can help you achieve your goals.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="icon-circle">📞</div>
+                            <span>+1 (555) 987-6543</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-circle">✉️</div>
+                            <span>contact@dineshwadhwani.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-circle">📍</div>
+                            <span>420 Stratwell Avenue, Suite 300,<br> Boston, MA 02116, USA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Form -->
+            <div class="contact-form-panel">
+                <div class="form-container fade-in-up delay-1">
+                    <form class="glass-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" placeholder="Jane Smith">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="jane@framer.com">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" placeholder="+123 476 9789">
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Select Date</label>
+                                <input type="date" id="date">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Your Company Name</label>
+                                <input type="text" id="company" placeholder="Company Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service You Are Interested In</label>
+                                <select id="service">
+                                    <option value="" disabled selected>Select...</option>
+                                    <option value="leadership">Executive Leadership</option>
+                                    <option value="ai">AI Strategy</option>
+                                    <option value="agile">Agile Transformation</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">How Can I Help You?</label>
+                            <textarea id="message" rows="4" placeholder="I need help with..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            Submit Form ↗
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Dinesh Wadhwani</h3>
+                    <p>Transforming visions into reality.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dinesh Wadhwani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
