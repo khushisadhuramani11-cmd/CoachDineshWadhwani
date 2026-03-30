@@ -60,6 +60,19 @@ const ProfessionalJourneyCarousel: React.FC = () => {
     // Translate = Center of Container - (Left offset of current card + Half card width)
     const translateAmount = (containerWidth / 2) - ((currentIndex * (cardWidth + gap)) + (cardWidth / 2));
 
+    const handleDragEnd = (e: any, { offset, velocity }: any) => {
+        const swipePower = Math.abs(offset.x) * velocity.x;
+
+        // If swiped far enough or fast enough to the left, go next
+        if (offset.x < -50 || swipePower < -10000) {
+            handleNext();
+        } 
+        // If swiped far enough or fast enough to the right, go previous
+        else if (offset.x > 50 || swipePower > 10000) {
+            handlePrev();
+        }
+    };
+
     return (
         <div className="relative w-full pt-4 pb-16 overflow-hidden" ref={containerRef}>
 
@@ -87,22 +100,30 @@ const ProfessionalJourneyCarousel: React.FC = () => {
 
             <div className="relative h-[450px]">
                 <motion.div
-                    className="absolute flex items-center top-0 left-0 h-full"
+                    className="absolute flex items-center top-0 left-0 h-full cursor-grab active:cursor-grabbing"
                     animate={{ x: translateAmount }}
                     transition={{ type: "spring", stiffness: 200, damping: 25 }}
                     style={{ gap: `${gap}px` }}
+                    drag="x"
+                    dragConstraints={{ left: translateAmount, right: translateAmount }}
+                    dragElastic={0.2}
+                    onDragEnd={handleDragEnd}
                 >
                     {journeyData.map((item, index) => {
                         const isCenter = index === currentIndex;
-                        const isAdjacent = Math.abs(index - currentIndex) === 1;
+                        // Calculate opacity based on distance from center for a smoother fade
+                        const distance = Math.abs(index - currentIndex);
+                        let cardOpacity = 1;
+                        if (distance === 1) cardOpacity = 0.5;
+                        else if (distance > 1) cardOpacity = 0.2;
 
                         return (
                             <motion.div
                                 key={item.id}
-                                className="relative rounded-2xl p-8 cursor-pointer border border-white/10 backdrop-blur-md"
+                                className="relative rounded-2xl p-8 border border-white/10 backdrop-blur-md shrink-0"
                                 animate={{
                                     scale: isCenter ? 1 : 0.85,
-                                    opacity: isCenter ? 1 : (isAdjacent ? 0.3 : 0),
+                                    opacity: isCenter ? 1 : cardOpacity,
                                     backgroundColor: isCenter ? "rgba(255, 255, 255, 0.08)" : "rgba(255, 255, 255, 0.03)"
                                 }}
                                 transition={{ duration: 0.4 }}

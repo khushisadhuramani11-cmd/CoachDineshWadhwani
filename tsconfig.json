@@ -24,12 +24,13 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx"
+        "jsx": "react"
     },
     "include": [
         "src",
         "components",
+        "main.js",
         "declarations.d.ts",
-        "main.tsx"
+        "react-mount.tsx"
     ]
 }
