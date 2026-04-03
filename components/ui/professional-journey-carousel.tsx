@@ -185,7 +185,7 @@ const ProfessionalJourneyCarousel: React.FC = () => {
                         return (
                             <motion.div
                                 key={item.id}
-                                className="relative rounded-2xl p-8 border border-white/10 backdrop-blur-md shrink-0"
+                                className="relative rounded-2xl px-8 py-6 sm:px-10 sm:py-8 border border-white/10 backdrop-blur-md shrink-0"
                                 animate={{
                                     scale: isCenter ? 1 : 0.85,
                                     opacity: isCenter ? 1 : cardOpacity,
@@ -204,12 +204,14 @@ const ProfessionalJourneyCarousel: React.FC = () => {
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/20 rounded-full blur-3xl -z-10"></div>
 
                                 {item.logo && (
-                                    <div className="h-8 sm:h-10 mb-6 rounded-md flex items-center justify-start border border-white/5 bg-white/5 px-2 py-1 inline-block w-auto max-w-[60%]">
+                                    <div className="h-10 sm:h-12 mb-6 rounded-md flex items-center justify-start border border-white/10 bg-white/10 px-3 py-2 inline-block w-auto max-w-[70%] ml-1"
+                                        style={{ marginTop: '2px' }}>
                                         <img src={item.logo} alt={item.company} className="max-h-full max-w-full object-contain" />
                                     </div>
                                 )}
 
-                                <div className="flex gap-2 mb-4 flex-wrap items-center">
+                                <div className="flex flex-col items-start gap-2 mb-4">
+                                    <div className="flex gap-2 flex-wrap items-center">
                                     <span className="text-xs sm:text-sm text-amber-200 font-bold tracking-wide uppercase">
                                         {item.date}
                                     </span>
