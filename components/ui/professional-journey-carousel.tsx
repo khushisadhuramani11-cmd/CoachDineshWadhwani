@@ -13,14 +13,78 @@ interface JourneyItem {
 }
 
 const journeyData: JourneyItem[] = [
-    { id: 1, date: "Sep 2021 - Present", duration: "4 yrs 7 mos", company: "NICE Ltd", role: "Sr. Director of Engineering", description: "Leading WCX Engineering", logo: "logo1.png" },
-    { id: 2, date: "May 2016 - Sep 2021", duration: "5 yrs 5 mos", company: "Capita Sims", role: "Head of Engineering", description: "Heading Education Software", logo: "logo2.png" },
-    { id: 3, date: "Mar 2010 - May 2016", duration: "6 yrs 3 mos", company: "IBM", role: "Sr. Manager, Engineering", description: "Procurement Domain Engineering", logo: "logo3.png" },
-    { id: 4, date: "Sep 2008 - Apr 2010", duration: "1 yr 8 mos", company: "Core Objects", role: "Competency Head", description: "Managing UI & Engineering", logo: "logo4.png" },
-    { id: 5, date: "Dec 2005 - Aug 2008", duration: "2 yrs 9 mos", company: "Xpanxion", role: "Snr. Program Manager", description: "Strategic Projects Management", logo: "logo5.png" },
-    { id: 6, date: "Mar 2002 - Dec 2005", duration: "3 yrs 10 mos", company: "Zensar Technologies", role: "Project Manager", description: "End-to-end Project Delivery", logo: "logo6.png" },
-    { id: 7, date: "May 2001 - Mar 2002", duration: "11 mos", company: "AJILON NORTH AMERICA", role: "Consultant", description: "Web Portal Development", logo: "logo7.png" },
-    { id: 8, date: "Jan 2000 - May 2001", duration: "1 yr 5 mos", company: "Diaspark Inc", role: "Consultant", description: "Java Software Engineering", logo: "logo8.png" }
+    {
+        id: 1,
+        date: "Sep 2021 - Present",
+        duration: "4 yrs 7 mos",
+        company: "NICE Ltd",
+        role: "Sr. Director of Engineering",
+        description: "Leading the Workforce and Customer Experience (WCX) group of ~400 engineers in Pune. Responsible for product enhancements across 8 product lines, driving engineering deliveries, innovation, and operations with strong Agile practices.",
+        logo: "logo1.png"
+    },
+    {
+        id: 2,
+        date: "May 2016 - Sep 2021",
+        duration: "5 yrs 5 mos",
+        company: "Capita Sims",
+        role: "Head of Engineering",
+        description: "Led the India engineering organization supporting Education Software Solutions (ESS UK), scaled the delivery team from 100 to 1200+ resources, and transitioned to a standalone organization after acquisition. Owned engineering operations, product delivery, and tech practices.",
+        logo: "logo2.png"
+    },
+    {
+        id: 3,
+        date: "Mar 2010 - May 2016",
+        duration: "6 yrs 3 mos",
+        company: "IBM",
+        role: "Sr. Manager, Engineering",
+        description: "Managed end-to-end engineering for procurement domain software, built high-performing teams, and launched new initiatives to accelerate business growth with best-in-class delivery and Agile team culture.",
+        logo: "logo3.png"
+    },
+    {
+        id: 4,
+        date: "Sep 2008 - Apr 2010",
+        duration: "1 yr 8 mos",
+        company: "Core Objects",
+        role: "Competency Head / Engineering Manager",
+        description: "Led UI competency for product suite and managed engineering delivery for Avery Dennison projects, establishing strong team coordination and software quality standards.",
+        logo: "logo4.png"
+    },
+    {
+        id: 5,
+        date: "Dec 2005 - Aug 2008",
+        duration: "2 yrs 9 mos",
+        company: "Xpanxion",
+        role: "Snr. Program Manager",
+        description: "Managed strategic programs for Turner Broadcasting Atlanta, leading cross-functional teams and delivering complex projects on schedule.",
+        logo: "logo5.png"
+    },
+    {
+        id: 6,
+        date: "Mar 2002 - Dec 2005",
+        duration: "3 yrs 10 mos",
+        company: "Zensar Technologies",
+        role: "Project Manager",
+        description: "Responsible for end-to-end project management and successful delivery for Zensar customers, driving process improvements and customer satisfaction.",
+        logo: "logo6.png"
+    },
+    {
+        id: 7,
+        date: "May 2001 - Mar 2002",
+        duration: "11 mos",
+        company: "AJILON NORTH AMERICA",
+        role: "Consultant",
+        description: "Worked as technology consultant for Verizon web portal development, focusing on design and implementation of business-critical solutions.",
+        logo: "logo7.png"
+    },
+    {
+        id: 8,
+        date: "Jan 2000 - May 2001",
+        duration: "1 yr 5 mos",
+        company: "Diaspark Inc",
+        role: "Consultant",
+        description: "Joined as Java consultant for Juniper Financials project in Delaware, delivering high-quality software development in a collaborative team.",
+        logo: "logo8.png"
+    }
 ];
 
 const ProfessionalJourneyCarousel: React.FC = () => {
@@ -53,8 +117,9 @@ const ProfessionalJourneyCarousel: React.FC = () => {
 
     // Card width + Gap (Responsive)
     const isMobile = containerWidth < 640;
-    const cardWidth = isMobile ? Math.min(containerWidth - 40, 300) : 350;
-    const gap = isMobile ? 20 : 32;
+    const isSmallMobile = containerWidth < 480;
+    const cardWidth = isSmallMobile ? Math.min(containerWidth - 30, 280) : isMobile ? Math.min(containerWidth - 40, 300) : 350;
+    const gap = isSmallMobile ? 16 : isMobile ? 20 : 32;
 
     // Calculate how much to translate the track so the currentIndex card is centered
     // Translate = Center of Container - (Left offset of current card + Half card width)
@@ -98,7 +163,7 @@ const ProfessionalJourneyCarousel: React.FC = () => {
                 </div>
             </div>
 
-            <div className="relative h-[450px]">
+            <div className="relative h-[300px] sm:h-[340px] md:h-[380px] lg:h-[400px]">
                 <motion.div
                     className="absolute flex items-center top-0 left-0 h-full cursor-grab active:cursor-grabbing"
                     animate={{ x: translateAmount }}
@@ -130,35 +195,37 @@ const ProfessionalJourneyCarousel: React.FC = () => {
                                 onClick={() => setCurrentIndex(index)}
                                 style={{
                                     width: `${cardWidth}px`,
-                                    height: '380px',
-                                    boxShadow: isCenter ? '0 25px 50px -12px rgba(0, 0, 0, 0.5)' : 'none'
+                                    minHeight: '260px',
+                                    maxHeight: '320px',
+                                    height: 'auto',
+                                    boxShadow: isCenter ? '0 20px 45px -10px rgba(0, 0, 0, 0.45)' : 'none'
                                 }}
                             >
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/20 rounded-full blur-3xl -z-10"></div>
 
                                 {item.logo && (
-                                    <div className="h-10 mb-5 rounded-md flex items-center justify-start border border-white/5 bg-white/5 px-2 py-1 inline-block w-auto max-w-[50%]">
+                                    <div className="h-8 sm:h-10 mb-6 rounded-md flex items-center justify-start border border-white/5 bg-white/5 px-2 py-1 inline-block w-auto max-w-[60%]">
                                         <img src={item.logo} alt={item.company} className="max-h-full max-w-full object-contain" />
                                     </div>
                                 )}
 
-                                <div className="flex gap-2 mb-4 flex-wrap">
-                                    <span className="inline-block px-3 py-1 text-xs rounded-full bg-amber-500/20 text-amber-300 font-bold tracking-wider uppercase border border-amber-500/30">
+                                <div className="flex gap-2 mb-4 flex-wrap items-center">
+                                    <span className="text-xs sm:text-sm text-amber-200 font-bold tracking-wide uppercase">
                                         {item.date}
                                     </span>
-                                    <span className="inline-block px-3 py-1 text-xs rounded-full bg-white/10 text-gray-300 font-medium tracking-wider uppercase border border-white/20">
+                                    <span className="text-xs sm:text-sm text-gray-300 font-medium tracking-wide uppercase">
                                         {item.duration}
                                     </span>
                                 </div>
 
-                                <h4 className="text-xl text-white font-serif mb-1 leading-tight">
+                                <h4 className="text-lg sm:text-lg md:text-xl text-white font-serif mb-3 leading-tight">
                                     {item.role}
                                 </h4>
-                                <h5 className="text-sm font-semibold text-amber-500 mb-4 uppercase tracking-wide">
+                                <h5 className="text-xs sm:text-sm font-semibold text-amber-500 mb-3 uppercase tracking-wide">
                                     {item.company}
                                 </h5>
 
-                                <p className="text-gray-300 text-sm leading-relaxed">
+                                <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                                     {item.description}
                                 </p>
 
