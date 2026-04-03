@@ -20,7 +20,7 @@ const journeyData: JourneyItem[] = [
         company: "NICE Ltd",
         role: "Sr. Director of Engineering",
         description: "Leading the Workforce and Customer Experience (WCX) group of ~400 engineers in Pune. Responsible for product enhancements across 8 product lines, driving engineering deliveries, innovation, and operations with strong Agile practices.",
-        logo: "logo1.png"
+        logo: "/assets/logo1.png"
     },
     {
         id: 2,
@@ -29,7 +29,7 @@ const journeyData: JourneyItem[] = [
         company: "Capita Sims",
         role: "Head of Engineering",
         description: "Led the India engineering organization supporting Education Software Solutions (ESS UK), scaled the delivery team from 100 to 1200+ resources, and transitioned to a standalone organization after acquisition. Owned engineering operations, product delivery, and tech practices.",
-        logo: "logo2.png"
+        logo: "/assets/logo2.png"
     },
     {
         id: 3,
@@ -38,7 +38,7 @@ const journeyData: JourneyItem[] = [
         company: "IBM",
         role: "Sr. Manager, Engineering",
         description: "Managed end-to-end engineering for procurement domain software, built high-performing teams, and launched new initiatives to accelerate business growth with best-in-class delivery and Agile team culture.",
-        logo: "logo3.png"
+        logo: "/assets/logo3.png"
     },
     {
         id: 4,
@@ -47,7 +47,7 @@ const journeyData: JourneyItem[] = [
         company: "Core Objects",
         role: "Competency Head / Engineering Manager",
         description: "Led UI competency for product suite and managed engineering delivery for Avery Dennison projects, establishing strong team coordination and software quality standards.",
-        logo: "logo4.png"
+        logo: "/assets/logo4.png"
     },
     {
         id: 5,
@@ -56,7 +56,7 @@ const journeyData: JourneyItem[] = [
         company: "Xpanxion",
         role: "Snr. Program Manager",
         description: "Managed strategic programs for Turner Broadcasting Atlanta, leading cross-functional teams and delivering complex projects on schedule.",
-        logo: "logo5.png"
+        logo: "/assets/logo5.png"
     },
     {
         id: 6,
@@ -65,7 +65,7 @@ const journeyData: JourneyItem[] = [
         company: "Zensar Technologies",
         role: "Project Manager",
         description: "Responsible for end-to-end project management and successful delivery for Zensar customers, driving process improvements and customer satisfaction.",
-        logo: "logo6.png"
+        logo: "/assets/logo6.png"
     },
     {
         id: 7,
@@ -74,7 +74,7 @@ const journeyData: JourneyItem[] = [
         company: "AJILON NORTH AMERICA",
         role: "Consultant",
         description: "Worked as technology consultant for Verizon web portal development, focusing on design and implementation of business-critical solutions.",
-        logo: "logo7.png"
+        logo: "/assets/logo7.png"
     },
     {
         id: 8,
@@ -83,7 +83,7 @@ const journeyData: JourneyItem[] = [
         company: "Diaspark Inc",
         role: "Consultant",
         description: "Joined as Java consultant for Juniper Financials project in Delaware, delivering high-quality software development in a collaborative team.",
-        logo: "logo8.png"
+        logo: "/assets/logo8.png"
     }
 ];
 
